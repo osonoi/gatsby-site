@@ -1,0 +1,26 @@
+import React from 'react'
+import { graphql, Link } from 'gatsby'
+const IndexPage = ({data}) => {
+  return (
+    data.allNodeReshihi.nodes.map((node) =>
+      <div className='teaser wrapper'>
+        {node.field_recipe.processed}
+//    </div>
+  )
+ )
+
+
+}
+export const query = graphql`
+query IndexPage {
+  allNodeReshihi {
+    nodes {
+      field_recipe {
+        processed
+      }
+    }
+  }
+}
+ `
+
+export default IndexPage
